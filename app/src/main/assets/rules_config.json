@@ -1,0 +1,97 @@
+{
+  "rules_version": "1.0",
+  "metrology_rules": [
+    {
+      "rule_id": "MET_001",
+      "field": "MRP",
+      "title": "Maximum Retail Price (MRP)",
+      "regex": "(?:MRP|Max(?:imum)?\\.?\\s*Ret(?:ail)?\\.?\\s*Price|M\\.R\\.P\\.?)\\s*:?\\s*(?:₹|Rs\\.?|INR)?\\s*([0-9]+(?:\\.[0-9]{1,2})?)",
+      "mandatory": true,
+      "description": "Declaration of Maximum Retail Price inclusive of all taxes is mandatory under Legal Metrology (Packaged Commodities) Rules."
+    },
+    {
+      "rule_id": "MET_002",
+      "field": "EXPIRY_DATE",
+      "title": "Expiry / Best Before Date",
+      "regex": "(?:EXP|Expiry|Use\\s*By|Best\\s*Before|Date\\s*of\\s*Expiry)\\s*:?\\s*([0-9]{1,2}[\\/\\.-][0-9]{1,2}[\\/\\.-][0-9]{2,4}|[A-Za-z]{3,9}\\s*[0-9]{4}|[0-9]{1,2}\\s+[A-Za-z]{3,9}\\s+[0-9]{2,4})",
+      "mandatory": true,
+      "description": "Expiry or Best Before date is mandatory to ensure consumer health and safety."
+    },
+    {
+      "rule_id": "MET_003",
+      "field": "NET_QUANTITY",
+      "title": "Net Quantity",
+      "regex": "(?:Net\\s*(?:Wt|Weight|Vol|Volume|Qty|Quantity)|Weight)\\s*:?\\s*([0-9]+(?:\\.[0-9]+)?\\s*(?:g|gm|gms|kg|ml|l|ltr|litres|mg|pieces|pcs|N|count))",
+      "mandatory": true,
+      "description": "Net weight, volume, or count declared in standard metric units."
+    },
+    {
+      "rule_id": "MET_004",
+      "field": "MFG_DETAILS",
+      "title": "Manufacturer Name & Address",
+      "regex": "(?:Mfg(?:\\.|\\s*by)?|Manufactured\\s*by|Packed\\s*by|Marketed\\s*by)\\s*:?\\s*([A-Za-z0-9\\s,.-]{4,60})",
+      "mandatory": true,
+      "description": "Full name, complete registered address of manufacturer or packer."
+    },
+    {
+      "rule_id": "MET_005",
+      "field": "CONSUMER_CARE",
+      "title": "Consumer Care Helpline",
+      "regex": "(?:Consumer\\s*Care|Customer\\s*Care|Helpline|Toll\\s*Free|Feedback)\\s*:?\\s*([0-9\\-\\+\\s]{6,15}|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})",
+      "mandatory": true,
+      "description": "Consumer helpline number or email address for grievance redressal."
+    }
+  ],
+  "food_safety_rules": [
+    {
+      "rule_id": "FSS_001",
+      "field": "FSSAI_LICENSE",
+      "title": "FSSAI 14-Digit License",
+      "regex": "(?:FSSAI|Lic(?:ence)?\\.?\\s*(?:No|Number)?\\.?)\\s*:?\\s*([0-9]{14})",
+      "mandatory": true,
+      "description": "14-digit FSSAI food business operating license number."
+    },
+    {
+      "rule_id": "FSS_002",
+      "field": "VEG_NONVEG",
+      "title": "Veg / Non-Veg Declaration",
+      "regex": "(?:100%\\s*Vegetarian|Vegetarian|Non-Vegetarian|Veg\\b|Non-Veg\\b|Green\\s*Dot|Brown\\s*Dot)",
+      "mandatory": true,
+      "description": "Mandatory symbol or declaration indicating vegetarian or non-vegetarian origin."
+    },
+    {
+      "rule_id": "FSS_003",
+      "field": "ALLERGENS",
+      "title": "Allergen Warning",
+      "regex": "(?:Contains|Allergen(?:s)?\\s*:?|May\\s*contain)\\s*([A-Za-z0-9\\s,;()]+(?:gluten|wheat|peanut|nut|tree\\s*nut|milk|dairy|soy|soya|egg|fish|crustacean|sulphite))",
+      "mandatory": false,
+      "description": "Declaration of potential allergens like gluten, tree nuts, milk, or soy."
+    }
+  ],
+  "medicine_rules": [
+    {
+      "rule_id": "MED_001",
+      "field": "SCHEDULE_H_WARNING",
+      "title": "Schedule H / H1 Prescription Warning",
+      "regex": "(?:SCHEDULE\\s*[HH]1?\\s*PRESCRIPTION\\s*DRUG|Warning\\s*:?\\s*To\\s*be\\s*sold\\s*by\\s*retail\\s*on\\s*the\\s*prescription|Rx\\b)",
+      "mandatory": true,
+      "description": "Prescription-only drug warning pursuant to the Drugs and Cosmetics Act."
+    },
+    {
+      "rule_id": "MED_002",
+      "field": "ACTIVE_INGREDIENTS",
+      "title": "Composition & Active Ingredients",
+      "regex": "(?:Each\\s*(?:film\\s*coated\\s*)?(?:tablet|capsule|ml|5ml)\\s*contains|Composition\\s*:?)\\s*([A-Za-z0-9\\s,.-]+(?:mg|mcg|IU|g|%))",
+      "mandatory": true,
+      "description": "Exact pharmacological active substances with standardized strengths."
+    },
+    {
+      "rule_id": "MED_003",
+      "field": "STORAGE_DOSAGE",
+      "title": "Storage & Dosage Instructions",
+      "regex": "(?:Store\\s*in\\s*a\\s*cool|Dosage\\s*:?|Keep\\s*out\\s*of\\s*reach\\s*of\\s*children)",
+      "mandatory": false,
+      "description": "Storage temperature guidelines and medical practitioner dosage direction."
+    }
+  ]
+}

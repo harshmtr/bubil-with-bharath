@@ -1,0 +1,6 @@
+{
+  "name": "Product Safety Scanner",
+  "description": "Real-time legal compliance validation for consumer products with offline ML Kit OCR, Legal Metrology rule engine, FSSAI verification, and Supabase cloud sync.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
